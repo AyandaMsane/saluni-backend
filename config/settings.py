@@ -9,11 +9,13 @@ ROOT_DIR = BASE_DIR.parent
 load_dotenv(ROOT_DIR / ".env")
 
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "dev-only-change-me")
-DEBUG = os.getenv("DJANGO_DEBUG", "True") == "True"
+DEBUG = False
 ALLOWED_HOSTS = [
-    host.strip()
-    for host in os.getenv("DJANGO_ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
-    if host.strip()
+    "localhost",
+    "127.0.0.1",
+    "saluni-backend.onrender.com",
+    "saluni.co.za",
+    "www.saluni.co.za",
 ]
 
 INSTALLED_APPS = [
