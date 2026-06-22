@@ -505,3 +505,9 @@ def update_booking_status(request, booking_id):
 
     serializer = BookingSerializer(booking, context={"request": request})
     return Response(serializer.data)
+
+@api_view(["GET"])
+def home(request):
+    return Response({
+        "message": "SALUNI Backend is running 🚀"
+    })

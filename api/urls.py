@@ -3,6 +3,7 @@ from rest_framework.routers import DefaultRouter
 
 from .views import (
     ProviderViewSet, 
+    home,
     ServiceViewSet, 
     RegistrationViewSet, 
     health_check,
@@ -25,6 +26,9 @@ router.register("services", ServiceViewSet, basename="service")
 router.register("registrations", RegistrationViewSet, basename="registration")
 
 urlpatterns = [
+
+path("", home, name="home"),
+
     path("health/", health_check, name="health-check"),
     
     # Auth endpoints
