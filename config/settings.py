@@ -10,6 +10,12 @@ load_dotenv(ROOT_DIR / ".env")
 
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "dev-only-change-me")
 DEBUG = False
+REST_FRAMEWORK = {
+    "DEFAULT_RENDERER_CLASSES": [
+        "rest_framework.renderers.JSONRenderer",
+    ],
+}
+
 ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
